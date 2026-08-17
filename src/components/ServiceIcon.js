@@ -46,7 +46,7 @@ export default function ServiceIcon({ selectedView, onOpenCategories, onOpenRefe
                       <Ionicons name={service.iconName} size={16} color={colors.textDark} />
                     ) : (
                       isContent && service.iconUrl ? (
-                        <Image source={{ uri: service.iconUrl }} style={styles.iconImage} />
+                        <Image source={{ uri: service.iconUrl }} style={styles.iconImage} resizeMode="contain" />
                       ) : (
                         <Text style={styles.emojiText}>{service.emoji}</Text>
                       )
@@ -171,7 +171,6 @@ const styles = StyleSheet.create({
   iconImage: {
     width: 22,
     height: 22,
-    resizeMode: 'contain',
   },
   serviceLabel: {
     marginTop: 4,

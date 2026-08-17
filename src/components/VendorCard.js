@@ -22,11 +22,11 @@ export default function VendorCard({ item, selectedView, onOpenDelivery }) {
       {/* Top Section (Image or Cream background with emoji/image) */}
       <View style={styles.topSection}>
         {item.isImageBased ? (
-          <Image source={{ uri: item.imageUrl }} style={styles.cardImage} />
+          <Image source={{ uri: item.imageUrl }} style={styles.cardImage} resizeMode="cover" />
         ) : (
           <View style={styles.iconBackground}>
             {selectedView === 'content' && item.iconUrl ? (
-              <Image source={{ uri: item.iconUrl }} style={styles.cartoonIcon} />
+              <Image source={{ uri: item.iconUrl }} style={styles.cartoonIcon} resizeMode="contain" />
             ) : (
               <Text style={styles.emojiIcon}>{item.emoji}</Text>
             )}
@@ -73,7 +73,6 @@ const styles = StyleSheet.create({
   cardImage: {
     width: '100%',
     height: '100%',
-    resizeMode: 'cover',
   },
   iconBackground: {
     width: '100%',
@@ -87,7 +86,6 @@ const styles = StyleSheet.create({
   cartoonIcon: {
     width: 44,
     height: 44,
-    resizeMode: 'contain',
   },
   bottomSection: {
     paddingVertical: 10,

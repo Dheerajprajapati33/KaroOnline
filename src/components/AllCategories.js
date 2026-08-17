@@ -35,7 +35,7 @@ export default function AllCategories({ selectedView, onSeeAll, onOpenDelivery }
             {/* White circle with colored border matching the site */}
             <View style={[styles.iconCircle, { borderColor: category.circleBorder }]}>
               {selectedView === 'content' && category.iconUrl ? (
-                <Image source={{ uri: category.iconUrl }} style={styles.iconImage} />
+                <Image source={{ uri: category.iconUrl }} style={styles.iconImage} resizeMode="contain" />
               ) : (
                 <Text style={styles.emojiText}>{category.emoji}</Text>
               )}
@@ -124,7 +124,6 @@ const styles = StyleSheet.create({
   iconImage: {
     width: 26,
     height: 26,
-    resizeMode: 'contain',
   },
   itemLabel: {
     fontSize: 9,

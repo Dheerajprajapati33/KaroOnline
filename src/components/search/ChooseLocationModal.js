@@ -98,7 +98,7 @@ export default function ChooseLocationModal({ visible, onClose, onOpenCity, onOp
               onPress={onOpenDistance}
             >
               <Ionicons
-                name="ruler-outline"
+                name="compass-outline"
                 size={13}
                 color="#2563EB"
                 style={styles.pillIconLeft}

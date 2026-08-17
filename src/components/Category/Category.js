@@ -63,7 +63,7 @@ export default function CategoryModal({ visible, onClose }) {
               onPress={() => setSelectedSub('ato')}
             >
               <View style={[styles.subIconCircle, { backgroundColor: '#F1F5F9' }]}>
-                <Ionicons name="smartphone-outline" size={24} color="#64748B" />
+                <Ionicons name="phone-portrait-outline" size={24} color="#64748B" />
               </View>
               <Text style={[styles.subCardText, selectedSub === 'ato' && styles.selectedSubText]}>
                 Ato
@@ -139,7 +139,7 @@ export default function CategoryModal({ visible, onClose }) {
             <View style={styles.vendorCard}>
               <View style={styles.vendorUpper}>
                 <View style={[styles.vendorAvatarContainer, { backgroundColor: '#F0FDF4' }]}>
-                  <Ionicons name="smartphone-outline" size={22} color="#10B981" />
+                  <Ionicons name="phone-portrait-outline" size={22} color="#10B981" />
                 </View>
                 <View style={styles.vendorInfo}>
                   <Text style={styles.vendorName}>1 pepel delivery</Text>
@@ -169,7 +169,7 @@ export default function CategoryModal({ visible, onClose }) {
             <View style={styles.vendorCard}>
               <View style={styles.vendorUpper}>
                 <View style={[styles.vendorAvatarContainer, { backgroundColor: '#F1F5F9' }]}>
-                  <Ionicons name="wrench-outline" size={22} color="#64748B" />
+                  <Ionicons name="build-outline" size={22} color="#64748B" />
                 </View>
                 <View style={styles.vendorInfo}>
                   <Text style={styles.vendorName}>A</Text>

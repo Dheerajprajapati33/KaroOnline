@@ -93,7 +93,7 @@ export default function DigitalShopeModal({ visible, onClose }) {
           >
             {/* Karo Digital Shop */}
             <TouchableOpacity style={styles.appPill} activeOpacity={0.8}>
-              <Ionicons name="smartphone" size={12} color="#64748B" style={{ marginRight: 6 }} />
+              <Ionicons name="phone-portrait-outline" size={12} color="#64748B" style={{ marginRight: 6 }} />
               <View style={[styles.appDot, { backgroundColor: '#FEF9C3', borderColor: '#E2E8F0', borderWidth: 1 }]} />
               <Text style={styles.appPillText}>Karo Digital Shop</Text>
               <Ionicons name="open-outline" size={11} color="#64748B" style={styles.appPillIcon} />
@@ -101,7 +101,7 @@ export default function DigitalShopeModal({ visible, onClose }) {
 
             {/* Karo Referral */}
             <TouchableOpacity style={styles.appPill} activeOpacity={0.8}>
-              <Ionicons name="smartphone" size={12} color="#64748B" style={{ marginRight: 6 }} />
+              <Ionicons name="phone-portrait-outline" size={12} color="#64748B" style={{ marginRight: 6 }} />
               <View style={[styles.appDot, { backgroundColor: '#FF8A00' }]} />
               <Text style={styles.appPillText}>Karo Referral</Text>
               <Ionicons name="open-outline" size={11} color="#64748B" style={styles.appPillIcon} />
@@ -109,7 +109,7 @@ export default function DigitalShopeModal({ visible, onClose }) {
 
             {/* Karo Vendor */}
             <TouchableOpacity style={styles.appPill} activeOpacity={0.8}>
-              <Ionicons name="smartphone" size={12} color="#64748B" style={{ marginRight: 6 }} />
+              <Ionicons name="phone-portrait-outline" size={12} color="#64748B" style={{ marginRight: 6 }} />
               <View style={[styles.appDot, { backgroundColor: '#000000' }]} />
               <Text style={styles.appPillText}>Karo Vendor</Text>
               <Ionicons name="open-outline" size={11} color="#64748B" style={styles.appPillIcon} />
@@ -117,7 +117,7 @@ export default function DigitalShopeModal({ visible, onClose }) {
 
             {/* Karo Staff */}
             <TouchableOpacity style={styles.appPill} activeOpacity={0.8}>
-              <Ionicons name="smartphone" size={12} color="#64748B" style={{ marginRight: 6 }} />
+              <Ionicons name="phone-portrait-outline" size={12} color="#64748B" style={{ marginRight: 6 }} />
               <View style={[styles.appDot, { backgroundColor: '#FEF9C3', borderColor: '#E2E8F0', borderWidth: 1 }]} />
               <Text style={styles.appPillText}>Karo Staff</Text>
               <Ionicons name="open-outline" size={11} color="#64748B" style={styles.appPillIcon} />
@@ -125,7 +125,7 @@ export default function DigitalShopeModal({ visible, onClose }) {
 
             {/* Karo One */}
             <TouchableOpacity style={styles.appPill} activeOpacity={0.8}>
-              <Ionicons name="smartphone" size={12} color="#64748B" style={{ marginRight: 6 }} />
+              <Ionicons name="phone-portrait-outline" size={12} color="#64748B" style={{ marginRight: 6 }} />
               <View style={[styles.appDot, { backgroundColor: '#0284C7' }]} />
               <Text style={styles.appPillText}>Karo One</Text>
               <Ionicons name="open-outline" size={11} color="#64748B" style={styles.appPillIcon} />
