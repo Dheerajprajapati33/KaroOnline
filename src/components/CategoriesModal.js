@@ -7,7 +7,7 @@ import { RIBBON_SERVICES } from '../constants/data';
 const GRID_PADDING = 16;
 const GAP = 10;
 
-export default function CategoriesModal({ visible, onClose, selectedView }) {
+export default function CategoriesModal({ visible, onClose, selectedView, onOpenDelivery }) {
   const { width, height } = useWindowDimensions();
   const [activeTab, setActiveTab] = useState('tape');
 
@@ -82,6 +82,12 @@ export default function CategoriesModal({ visible, onClose, selectedView }) {
                     }
                   ]}
                   activeOpacity={0.7}
+                  onPress={() => {
+                    if (isDelivery && onOpenDelivery) {
+                      onOpenDelivery();
+                      onClose(); // Automatically close categories drawer modal
+                    }
+                  }}
                 >
                   {/* Circle icon container */}
                   <View style={[styles.iconCircle, { borderColor: isDelivery ? '#FFE6D5' : '#E2E8F0' }]}>

@@ -5,7 +5,7 @@ import { colors } from '../theme/colors';
 import { RIBBON_SERVICES } from '../constants/data';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export default function ServiceIcon({ selectedView, onOpenCategories, onOpenRefer, hideCategories }) {
+export default function ServiceIcon({ selectedView, onOpenCategories, onOpenRefer, hideCategories, onOpenDelivery }) {
   const isContent = selectedView === 'content';
 
   return (
@@ -30,6 +30,8 @@ export default function ServiceIcon({ selectedView, onOpenCategories, onOpenRefe
                   onPress={() => {
                     if (isChevron && onOpenCategories) {
                       onOpenCategories(); // Triggers categories slide-up modal when clicking More
+                    } else if (service.id === '1' && onOpenDelivery) {
+                      onOpenDelivery(); // Triggers Delivery page modal
                     }
                   }}
                 >

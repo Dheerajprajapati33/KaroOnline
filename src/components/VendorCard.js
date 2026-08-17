@@ -3,14 +3,22 @@ import { StyleSheet, Text, View, TouchableOpacity, Image, useWindowDimensions } 
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../theme/colors';
 
-export default function VendorCard({ item, selectedView }) {
+export default function VendorCard({ item, selectedView, onOpenDelivery }) {
   const { width } = useWindowDimensions();
 
   // Dynamic layout calculations for responsiveness
   const cardWidth = width > 768 ? 168 : width * 0.44;
 
   return (
-    <TouchableOpacity style={[styles.cardContainer, { width: cardWidth }]} activeOpacity={0.85}>
+    <TouchableOpacity 
+      style={[styles.cardContainer, { width: cardWidth }]} 
+      activeOpacity={0.85}
+      onPress={() => {
+        if (item.id === '1' && onOpenDelivery) {
+          onOpenDelivery();
+        }
+      }}
+    >
       {/* Top Section (Image or Cream background with emoji/image) */}
       <View style={styles.topSection}>
         {item.isImageBased ? (

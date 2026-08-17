@@ -7,7 +7,7 @@ import { SERVICES } from '../constants/data';
 const GRID_PADDING = 16;
 const GAP = 8;
 
-export default function AllCategories({ selectedView, onSeeAll }) {
+export default function AllCategories({ selectedView, onSeeAll, onOpenDelivery }) {
   const { width } = useWindowDimensions();
 
   return (
@@ -26,6 +26,11 @@ export default function AllCategories({ selectedView, onSeeAll }) {
             key={category.id} 
             style={styles.gridItem}
             activeOpacity={0.7}
+            onPress={() => {
+              if (category.id === '1' && onOpenDelivery) {
+                onOpenDelivery();
+              }
+            }}
           >
             {/* White circle with colored border matching the site */}
             <View style={[styles.iconCircle, { borderColor: category.circleBorder }]}>

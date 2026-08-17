@@ -19,6 +19,7 @@ import ReferModal from '../components/Refer/Refer';
 import ChooseLocationModal from '../components/search/ChooseLocationModal';
 import CityModal from '../components/city/city';
 import DistanceModal from '../components/city/distance';
+import CategoryModal from '../components/Category/Category';
 import { RECOMMENDED_VIDEOS, RECOMMENDED_VENDORS } from '../constants/data';
 
 export default function HomeScreen() {
@@ -31,6 +32,7 @@ export default function HomeScreen() {
   const [locationModalVisible, setLocationModalVisible] = useState(false);
   const [cityModalVisible, setCityModalVisible] = useState(false);
   const [distanceModalVisible, setDistanceModalVisible] = useState(false);
+  const [deliveryModalVisible, setDeliveryModalVisible] = useState(false);
   
   // Shared global state for selected distance radius, default to 2 to match screenshots
   const [selectedRadius, setSelectedRadius] = useState(2);
@@ -50,6 +52,7 @@ export default function HomeScreen() {
             onOpenCategories={() => setCategoriesModalVisible(true)}
             onOpenLocation={() => setLocationModalVisible(true)}
             hideCategories={isSearchDrawerOpen}
+            onOpenDelivery={() => setDeliveryModalVisible(true)}
           />
 
           <ScrollView 
@@ -92,7 +95,7 @@ export default function HomeScreen() {
               
               <FlatList
                 data={RECOMMENDED_VENDORS}
-                renderItem={({ item }) => <VendorCard item={item} selectedView={selectedView} />}
+                renderItem={({ item }) => <VendorCard item={item} selectedView={selectedView} onOpenDelivery={() => setDeliveryModalVisible(true)} />}
                 horizontal
                 showsHorizontalScrollIndicator={false}
                 keyExtractor={(item) => item.id}
@@ -101,7 +104,7 @@ export default function HomeScreen() {
             </View>
 
             {/* All Categories Grid Section */}
-            <AllCategories selectedView={selectedView} onSeeAll={() => setCategoriesModalVisible(true)} />
+            <AllCategories selectedView={selectedView} onSeeAll={() => setCategoriesModalVisible(true)} onOpenDelivery={() => setDeliveryModalVisible(true)} />
 
             {/* Padding spacer to prevent floating bottom elements from blocking last scroll elements */}
             <View style={styles.bottomSpacer} />
@@ -159,7 +162,7 @@ export default function HomeScreen() {
               
               <FlatList
                 data={RECOMMENDED_VENDORS}
-                renderItem={({ item }) => <VendorCard item={item} selectedView={selectedView} />}
+                renderItem={({ item }) => <VendorCard item={item} selectedView={selectedView} onOpenDelivery={() => setDeliveryModalVisible(true)} />}
                 horizontal
                 showsHorizontalScrollIndicator={false}
                 keyExtractor={(item) => item.id}
@@ -168,7 +171,7 @@ export default function HomeScreen() {
             </View>
 
             {/* All Categories Grid Section */}
-            <AllCategories selectedView={selectedView} onSeeAll={() => setCategoriesModalVisible(true)} />
+            <AllCategories selectedView={selectedView} onSeeAll={() => setCategoriesModalVisible(true)} onOpenDelivery={() => setDeliveryModalVisible(true)} />
 
             {/* Padding spacer to prevent floating bottom elements from blocking last scroll elements */}
             <View style={styles.bottomSpacer} />
@@ -181,6 +184,7 @@ export default function HomeScreen() {
         visible={categoriesModalVisible} 
         onClose={() => setCategoriesModalVisible(false)} 
         selectedView={selectedView}
+        onOpenDelivery={() => setDeliveryModalVisible(true)}
       />
 
       {/* Quick Menu Drawer Overlay (tucks behind bottom bar and ribbon overlay) */}
@@ -218,6 +222,12 @@ export default function HomeScreen() {
         onChangeRadius={setSelectedRadius}
       />
 
+      {/* Delivery Category Drawer Overlay */}
+      <CategoryModal 
+        visible={deliveryModalVisible} 
+        onClose={() => setDeliveryModalVisible(false)} 
+      />
+
       {/* Services Ribbon Row - FLOATS PERSISTENTLY ON TOP ONLY IN MAP VIEW */}
       {selectedView === 'map' && !referModalVisible && !quickMenuVisible && (
         <ServiceIcon 
@@ -225,6 +235,7 @@ export default function HomeScreen() {
           onOpenCategories={() => setCategoriesModalVisible(true)} 
           onOpenRefer={() => setReferModalVisible(true)}
           hideCategories={isSearchDrawerOpen}
+          onOpenDelivery={() => setDeliveryModalVisible(true)}
         />
       )}
 
